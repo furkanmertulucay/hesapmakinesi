@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Responsive Hesap Makinesi</title>
+	<link rel="stylesheet" type="text/css" href="hesap.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+	<script>
+   	var s1=0;
+   	var s2=0;
+   	let kontrol=true;
+   	var s =0;
+   	var simdiki=0;
+   	var sonuc=0;
+   	var islem;
+   		$(function(){
+   			for(var i=0; i<10; i++){
+   				$("#tikla"+i).click(function(){
+
+   					if(kontrol == true ){
+   						var value = $(this).html();
+   						s=s*10+parseInt(value);
+   						s1=s;
+   						$("#metin").val(s1); 						
+   					}
+   					else{
+   						var value2 = $(this).html();
+   						simdiki=simdiki*10+parseInt(value2);						
+   						s2=simdiki;
+   						$("#metin").val(s2);
+   						
+   					}	
+   					$(".islem").click(function(){
+   						kontrol=false;
+   						islem=$(this).text();
+   						$("#metin").html("");
+   						if(islem === "="){ 					
+   						$("#metin").val(sonuc);   										
+   						}
+   					});
+   					$(".sil").click(function(){
+   						$("#metin").val("");
+   						sonuc=0;
+   						s=0;
+   						simdiki=0;
+   						kontrol=true;
+   						
+   						});
+   					if(islem === "+"){
+   						sonuc=0;					
+   						sonuc=s1+s2;
+   						
+   					}
+   					else if(islem === "/"){
+   						sonuc=0;
+   						sonuc=s1/s2;
+   						
+   					}
+   					else if(islem === "x"){
+   						sonuc=0;
+   						sonuc=s1*s2;
+   						
+   					}
+   					else if(islem === "-"){
+   						sonuc=0;
+   						sonuc=s1-s2;
+   						
+   					}
+   				});
+   			}
+		});	
+   </script> 
+</head>
+<body>
+	<div class="outermost">
+	<div class="frame">
+		<div class="hesapla">
+			
+				<input  type="number" id="metin"  >
+		</div>
+		<div class="calculator">
+			<button class="tikla sil">C</button>
+			
+			<button id="tikla7" class="tikla">7</button>
+			<button id="tikla8" class="tikla">8</button>
+			<button id="tikla9" class="tikla">9</button>
+			<button class="tikla islem">/</button>
+			
+			<button id="tikla4" class="tikla">4</button>
+			<button id="tikla5" class="tikla">5</button>
+			<button id="tikla6" class="tikla">6</button>
+			<button class="tikla islem">x</button>
+			
+			<button id="tikla1" class="tikla">1</button>
+			<button id="tikla2" class="tikla">2</button>
+			<button id="tikla3" class="tikla">3</button>
+			<button class="tikla islem">-</button>
+			<button class="tikla islem">+</button>
+			
+			<button id="tikla0" class="tikla">0</button>
+			<button class="tikla esittir islem ">=</button>
+		</div>
+    </div>
+    </div>
+
+</body>
+</html>

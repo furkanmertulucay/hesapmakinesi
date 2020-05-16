@@ -1,0 +1,115 @@
+* {
+  box-sizing: border-box;
+}
+.frame{
+	width: 300px;
+	margin: auto;
+	
+}
+.outermost{
+  width: %100;
+}
+.calculator{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-gap: 12px ;
+}
+.hesapla{
+   	margin-bottom: 5px;
+    border:1px solid gray;
+    background-color: white;
+   
+}
+
+ #metin{
+  border:none;
+  
+  outline: none;
+  font-size: 30px;
+  padding: 10px 10px;
+ 
+  
+  color: black;
+  text-align: right;
+  
+ 
+}
+.tikla{
+    border-radius: 3px;
+    border: 1px solid green;
+    cursor: pointer;
+    background-color: silver;
+
+}
+.tikla:hover{
+  background-color: maroon;
+  
+}
+
+@media only screen and (min-width: 576px){
+  .outermost{
+    max-width: 540px;
+  }
+   #metin{
+    font-size: 10px;
+     width: 25%;
+  }
+ 
+  .frame{
+    width: 300px;
+  }
+  .calculator,.hesapla{
+    width: 40%;
+  }
+}
+
+@media only screen and  (min-width: 768px){
+  .outermost{
+    max-width: 720px;
+  }
+   #metin{
+    font-size: 20px;
+     width: 50%;
+  }
+  
+  .frame{
+    width: 240px;
+  }
+  .calculator,.hesapla{
+    width: 50%;
+  }
+}
+
+@media only screen and (min-width: 992px){
+  .outermost{
+    max-width: 960px;
+  }
+   #metin{
+    font-size: 30px;
+    width: 75%;
+  }
+   
+  .frame{
+    width: 320px;
+  }
+  .calculator,.hesapla{
+    width: 75%;
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .outermost{
+    max-width: 1140px;
+  }
+  #metin{
+    font-size: 40px;
+    width: 100%;
+  }
+  .frame{
+    width: 420px;
+  }
+  .calculator,.hesapla{
+    width: 100%;
+  }
+}
